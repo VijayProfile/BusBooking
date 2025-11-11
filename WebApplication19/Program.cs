@@ -1,4 +1,4 @@
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using WebApplication19.DbConnection;
 using WebApplication19.MongoDbService;
@@ -48,5 +48,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapGet("/", () => "🚍 Bus Booking API is running on Render!");
 
 app.Run();
