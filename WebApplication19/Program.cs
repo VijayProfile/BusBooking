@@ -27,6 +27,9 @@ builder.Services.AddSingleton<IMongoClient>(s =>
 });
 
 builder.Services.AddSingleton<BusService>();
+builder.Services.AddEndpointsApiExplorer(); // Required for Swagger
+builder.Services.AddSwaggerGen();            // Required for Swagger UI
+
 
 var app = builder.Build();
 // Use HTTPS redirection only when running locally (Development)
