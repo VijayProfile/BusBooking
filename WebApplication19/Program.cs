@@ -29,6 +29,12 @@ builder.Services.AddSingleton<IMongoClient>(s =>
 builder.Services.AddSingleton<BusService>();
 
 var app = builder.Build();
+// Use HTTPS redirection only when running locally (Development)
+if (!app.Environment.IsProduction())
+{
+    app.UseHttpsRedirection();
+}
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
